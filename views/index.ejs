@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>note</title>
+  </head>
+  <body>
+    <header>
+      <div class="button">
+        <a href="javascript:;" class="add">增加</a>
+        <a href="javascript:;" class="sort">整理</a>
+      </div>
+      <% if (isLogin) {%>
+        <div class="user">
+          <span>欢迎您，<%= user.username %></span>
+          <img src="<%= user.avatar %>" alt="">
+          <a class="logout" href="/auth/logout">注销</a>
+        </div>
+      <%} else { %>  
+        <a class="login" title="GitHub登录" href="/auth/github"> GitHub登录</a>
+      <% } %>
+    </header>
+    <div class="note-ct"></div>
+    <script src="/js/bundle.js"></script>
+  </body>
+</html>
